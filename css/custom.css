@@ -1,0 +1,100 @@
+body {
+    background-color: #528CD0;
+    font-family: 'Roboto Condensed', sans-serif;
+    display: flex;
+}
+
+.border-right {
+    border-color: #528CD0 !important;
+    border-width: 0.5rem !important;
+}
+
+.header {
+    background-color: #528CD0;
+    color: white;
+    font-size: 2rem;
+    padding: 0;
+    margin: auto;
+}
+
+.requests {
+    white-space: pre-wrap;
+}
+
+.row.container.week {
+    margin-left: auto;  
+    margin-right: auto;
+    margin-top: 3rem;
+    display: block;
+    padding: 0;
+}
+
+.col-lg.first {
+    padding-top: 0.5rem;
+}
+
+.col-lg.last {
+    padding-bottom: 1rem;
+}
+
+.card.week:not(.today) {
+    background-color: white;
+}
+
+.today {
+    background-color: #FCD667;
+}
+
+.today-text {
+    color: #FCD667;
+}
+
+.container {
+    border-color: #528CD0;
+    color:#528CD0;
+}
+
+.container.details {
+    float: right;
+    width: 45%;
+    padding: 2rem;
+}
+
+.break {
+    float: left;
+    width: 10%
+}
+
+.container.random {
+    float: left;
+    width: 45%;
+    padding: 2rem;
+}
+
+.container.bottom {
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+}
+
+.pray-for {
+    font-size: 1.5rem;
+}
+
+.name {
+    font-size: 1.5rem;
+}
+
+.add-person {
+    position: fixed; 
+    bottom: 1rem; 
+    right: 1rem;
+    background-color: #2342E3;
+}
+
+.edit-person {
+    float: right;
+    background-color: #2342E3;
+    display: none;
+}

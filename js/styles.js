@@ -1,14 +1,14 @@
-// TODO: Rewrite loading and reloading
+// TODO: Rewrite loading and reloading (doesn't load same thing if you open a new tab) and week resetting
 // TODO: Refactor everything...
+// TODO: Delete people
 $(document).ready(function() {
     setUp();
     eventHandlers();
+    saveDates();
 });
 
 $( window ).unload(function() {
     $('.selected').removeClass('selected')
-    saveDates();
-    saveContent();
     // chrome.storage.local.clear();
     // chrome.storage.sync.clear()
 });
@@ -174,6 +174,7 @@ function setPersonOnDay() {
             var modCurrentCol = parseInt(currentCol.charAt(currentCol.length - 1))
             insertNewDropdown(modCurrentCol, modCurrentRow);
         }
+        saveContent(); // save every change
     });
 
     // Select person to pray for

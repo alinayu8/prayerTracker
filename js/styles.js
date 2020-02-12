@@ -2,9 +2,14 @@
 // TODO: Refactor everything...
 // TODO: Delete people
 $(document).ready(function() {
+    chrome.storage.local.get(['mostRecentWeek'], function(result) {
+        if (result['mostRecentWeek'] == undefined) {
+            saveDates();
+        }
+    });
     setUp();
     eventHandlers();
-    saveDates();
+    // save week if not saved before
 });
 
 $( window ).unload(function() {
@@ -52,7 +57,7 @@ function resetDays() {
         if (result['mostRecentWeek'] != undefined) {
             var currentWeek = getCurrentWeek();
             var mostRecentWeek = result['mostRecentWeek'];
-            // var mostRecentWeek = ["02/02/2020", "02/03/2020", "02/04/2020", "02/05/2020", "02/06/2020", "02/07/2020", "02/08/2020"]
+            // var mostRecentWeek = [ "02/04/2020", "02/05/2020", "02/06/2020", "02/07/2020", "02/08/2020", "02/09/2020", "02/10/2020"]
             var resetWeek = new Array(7).fill(-1);
             console.log(mostRecentWeek);
             console.log(currentWeek);
@@ -73,6 +78,7 @@ function resetDays() {
                         $(row).find(newCol).html(currentContent); // where to overwrite content
                     } else { // WIPE FOR A NEW DAY
                         $(row).find(newCol).html('&nbsp'); // where to overwrite content
+                        saveDates(); // save a new week
                     }
                 }
             }
